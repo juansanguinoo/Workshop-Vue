@@ -1,28 +1,51 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <HeaderNav />
+    <div class="row">
+      <div class="aside col-md-1">
+        <SidebarMenu />
+      </div>
+      <div class="content col-md-11">
+        <SearchBar />
+        <CardContainer />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderNav from "./components/HeaderNav.vue";
+import SearchBar from "./components/SearchBar.vue";
+import SidebarMenu from "./components/SidebarMenu.vue";
+import CardContainer from "./components/CardContainer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HeaderNav,
+    SidebarMenu,
+    SearchBar,
+    CardContainer,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #f8f9fa !important;
+}
+
+@media screen and (max-width: 1100px) {
+  .aside {
+    display: none;
+  }
+
+  .content {
+    width: 100% !important;
+  }
 }
 </style>
